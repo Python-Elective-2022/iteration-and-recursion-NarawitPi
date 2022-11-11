@@ -17,17 +17,21 @@ function recursivePower
 """
 
 def iterativePower(base, exp):
-    result = 1
-    for time in range(int(exp)):
-        result *= base
+    exp = int(exp)
+    if exp >= 0:
+        result = 1
+        for time in range(int(exp)):
+            result *= base
 
     return round(result, 2)
 
 def recursivePower(base, exp):
-    if exp == 0:
-        result = 1
-    else:
-        result = base * recursivePower(base, int(exp) - 1)
+    exp = int(exp)
+    if exp >= 0:
+        if exp == 0:
+            result = 1
+        else:
+            result = base * recursivePower(base, int(exp) - 1)
     return round(result, 2)
 
 # test case
